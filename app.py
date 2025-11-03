@@ -34,6 +34,10 @@ def calc_kelly():
         else:
             invest_amount = f_star * cap 
             result.config(text=f"Optimal Fraction : {f_star: .2%} \n Recommended Investment : {invest_amount: .2f} " , fg="green")
+            half_kely = round(invest_amount/2 , 2)
+            quarter_kely = round(invest_amount/4 , 2) 
+
+            suggestion.config(text=f" Suggested \n  Half Kelly Investment Amount: {half_kely} \n Quarter Kelly Investment Amount : {quarter_kely} " , fg="blue")
     except ValueError:
         messagebox.showerror("Error!","Please Enter Valid Numbers!")
 
